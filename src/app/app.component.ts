@@ -6,5 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'CounterApp';
+  counter: number = 0;
+  interval:any;
+//   startCounter(){ 
+//     this.interval = setInterval(()=>{
+//     this.counter ++;
+//   },1000)
+// }
+ startCounter = ()=>{
+   this.interval = setInterval(()=>{
+     this.counter ++;
+   },1000)
+ }
+  pauseCounter = ()=>{
+    clearInterval(this.interval);
+  }
+  resetCounter = ()=>{
+    this.counter = 0;
+  }
 }
